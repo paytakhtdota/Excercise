@@ -46,5 +46,23 @@ const MHA ={
 
 console.log(MHA);
 console.log(MHA.age());
+// adding a property to an object
+MHA.gender = "male";
+console.log(MHA);
+
+// array note
+let A = [0,1,2];
+let B = A;
+B[3] = 3;
+
+console.log(A);
+
+// Objects
+
+let C = {index0 : 0,index1 : 1,index2 : 2};
+let D = C;
+let E = D;
+E.index3 = 3;
+ console.log(C);
 
 
