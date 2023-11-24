@@ -87,5 +87,11 @@ for(let element of myArray){
     console.log(element);
  }
 
+ // for-in 
+ 
+ for(let key in MHA){
+    console.log(key,">>>",MHA[key]);
+ }
+
 
 
