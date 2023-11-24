@@ -62,7 +62,30 @@ console.log(A);
 let C = {index0 : 0,index1 : 1,index2 : 2};
 let D = C;
 let E = D;
-E.index3 = 3;
+D.index3 = 3;
  console.log(C);
+
+ // for-of Array
+const myArray = [0,1,2,3,4,5];
+ 
+for(let i = 0; i < myArray.length; i++){
+    console.log(myArray[i]);
+}
+
+for(let element of myArray){
+    console.log(element);
+}
+
+// for-of String
+ const myString = "Hello, World!";
+
+ for(let i=0; i<myString.length;i++){
+    console.log(myString.charAt(i));
+ }
+
+ for(let element of myString){
+    console.log(element);
+ }
+
 
 
