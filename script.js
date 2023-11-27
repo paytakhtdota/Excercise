@@ -93,5 +93,28 @@ for(let element of myArray){
     console.log(key,">>>",MHA[key]);
  }
 
+ // Factory Function
 
+ function createCircle (redius){
+    return{
+        redius : redius,
+        isVisible : true,
+        draw : function(){console.log('draw')}
+    }
+ }
+
+const myCircle = createCircle(5);
+console.log(myCircle); 
+
+// Constructor Function
+ function Circle(radius){
+    this.redius = radius;
+    this.isVisible = true;
+    this.draw= function(){
+        console.log('draw')
+    }
+ }
+
+const myCircle2 = new Circle(3);
+console.log(myCircle2);
 
