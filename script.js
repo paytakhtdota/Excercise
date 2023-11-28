@@ -18,28 +18,28 @@ function isPrime(num) {
 console.log(isPrime(11));
 
 // for finding Prime Numbers between range of two number.
-const primeFinder = (firstNum,secNum) => {
-    let primes=[];
-    for(firstNum;firstNum <= secNum; firstNum++){
-        if(isPrime(firstNum)){
+const primeFinder = (firstNum, secNum) => {
+    let primes = [];
+    for (firstNum; firstNum <= secNum; firstNum++) {
+        if (isPrime(firstNum)) {
             primes.push(firstNum);
         };
     }
     return primes;
 }
 
-console.log(primeFinder(1,25));
+console.log(primeFinder(1, 25));
 
 //Objects and Methods
-const MHA ={
-    firstName : "Mohammad",
-    middelName:"Hossain",
-    lastName:   "Ansari",
-    BoD:    1989,
-    favorites :["Movie","Coding","Family Matters","Video Games"],
-    age : function ageCal(){
+const MHA = {
+    firstName: "Mohammad",
+    middelName: "Hossain",
+    lastName: "Ansari",
+    BoD: 1989,
+    favorites: ["Movie", "Coding", "Family Matters", "Video Games"],
+    age: function ageCal() {
         const currentyear = new Date().getFullYear();
-        return currentyear-this.BoD;
+        return currentyear - this.BoD;
     }
 }
 
@@ -51,7 +51,7 @@ MHA.gender = "male";
 console.log(MHA);
 
 // array note
-let A = [0,1,2];
+let A = [0, 1, 2];
 let B = A;
 B[3] = 3;
 
@@ -59,62 +59,93 @@ console.log(A);
 
 // Objects
 
-let C = {index0 : 0,index1 : 1,index2 : 2};
+let C = { index0: 0, index1: 1, index2: 2 };
 let D = C;
 let E = D;
 D.index3 = 3;
- console.log(C);
+console.log(C);
 
- // for-of Array
-const myArray = [0,1,2,3,4,5];
- 
-for(let i = 0; i < myArray.length; i++){
+// for-of Array
+const myArray = [0, 1, 2, 3, 4, 5];
+
+for (let i = 0; i < myArray.length; i++) {
     console.log(myArray[i]);
 }
 
-for(let element of myArray){
+for (let element of myArray) {
     console.log(element);
 }
 
 // for-of String
- const myString = "Hello, World!";
+const myString = "Hello, World!";
 
- for(let i=0; i<myString.length;i++){
+for (let i = 0; i < myString.length; i++) {
     console.log(myString.charAt(i));
- }
+}
 
- for(let element of myString){
+for (let element of myString) {
     console.log(element);
- }
+}
 
- // for-in 
- 
- for(let key in MHA){
-    console.log(key,">>>",MHA[key]);
- }
+// for-in 
 
- // Factory Function
+for (let key in MHA) {
+    console.log(key, ">>>", MHA[key]);
+}
 
- function createCircle (redius){
-    return{
-        redius : redius,
-        isVisible : true,
-        draw : function(){console.log('draw')}
+// Factory Function
+
+function createCircle(redius) {
+    return {
+        redius: redius,
+        isVisible: true,
+        draw: function () { console.log('draw') }
     }
- }
+}
 
 const myCircle = createCircle(5);
-console.log(myCircle); 
+console.log(myCircle);
+console.log(myCircle.constructor);
 
 // Constructor Function
- function Circle(radius){
+function Circle(radius) {
     this.redius = radius;
     this.isVisible = true;
-    this.draw= function(){
+    this.draw = function () {
         console.log('draw')
     }
- }
+}
 
 const myCircle2 = new Circle(3);
 console.log(myCircle2);
+console.log(myCircle2.constructor);
+
+// Random Numbers
+function getRandomNumber(max, min) {
+    return Math.random() * (max - min) + min;
+}
+
+console.log(getRandomNumber(10, 100));
+
+// forEach
+myArray.forEach(element => console.log(`${element} is :`, element % 2 == 0 ? "Even" : "Odd"));
+
+// sort objects
+
+const myObject = [
+    { id: "01", name: "Mohammad" },
+    { id: "02", name: "Hassan" },
+    { id: "03", name: "Rahim" },
+    { id: "04", name: "Ali" }];
+
+myObject.sort((A, B) => {
+    if (A.name < B.name) return -1;
+    if (A.name > B.name) return 1;
+    else { return 0; }
+})
+
+console.log(myObject);
+
+
+
 
