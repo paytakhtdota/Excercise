@@ -146,6 +146,42 @@ myObject.sort((A, B) => {
 
 console.log(myObject);
 
+// Methoos in OBJs
+function Video(title) {
+    this.title = title;
+    console.log(this);
+}
+const V = new Video("ABC");
+console.log(V);
+
+function game(title, RPG, year) {
+    this.title = title;
+    this.RPG = RPG;
+    this.year = year;
+}
+
+const wow = new game("WOW", +13, 2010);
+console.log(wow);
+
+///Getter and Setter
+
+const person = {
+    fName: "Mohammad",
+    lName: "Ansari",
+    get fullName() {
+        return (`${this.fName} ${this.lName}`);
+    },
+    set fullName(value) {
+        const partName = value.split(' ');
+        this.fName = partName[0];
+        this.lName = partName[1];
+    }
+};
+
+console.log(person.fullName); 
+console.log(person.fullName="Ahmad Ansari");
+
+
 
 
 
