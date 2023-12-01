@@ -182,6 +182,51 @@ console.log(person.fullName);
 console.log(person.fullName="Ahmad Ansari");
 
 
+// rest Operator
+
+function calclator(discount , ...argo){
+ const total = argo.reduce((a,b)=> a+b);
+ return total - (total*(discount/100));
+}
+
+console.log(calclator(10,1,2,3,4,5,6,7,8,9));
+
+// Try and Cache
+
+const car = {
+    company : "Honda",
+    model : "Fit",
+    year : 2010,
+    mileage : 102000,
+    insurance : true,
+    salvage : true,
+    get old() {
+        return new Date().getFullYear() - this.year;
+    },
+    get avarageMileagePerYear() {
+        return this.mileage/this.old;
+    },
+
+    get fullInfo(){
+         return `your car is ${this.company} ${this.model} ${this.year} and its Mileage is ${this.mileage}, ${this.insurance == true ? "it has insurance" : "It doent have any Insurance"}, ${this.salvage == true ? "it's a rebuild car" : "It's a New Brand Car"}`
+    },
+
+    set myValues(value) {
+        const fullData = value.split(",");
+        this.company =fullData[0];
+        this.model =fullData[1];
+        this.year =fullData[2];
+        this.mileage =fullData[3];
+        this.insurance =fullData[4];
+        this.salvage =fullData[5];
+    }
+
+}
+
+console.log(car.avarageMileagePerYear);
+console.log(car.fullInfo);
+car.myValues="Toyota,Camry,2023,0,false,false";
+console.log(car.fullInfo);
 
 
 
